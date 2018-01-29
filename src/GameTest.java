@@ -1,4 +1,5 @@
 import java.time.LocalDateTime;
+import java.util.stream.IntStream;
 
 import static org.junit.Assert.assertNotNull;
 import org.junit.Test;
@@ -18,15 +19,15 @@ public class GameTest {
         /* The rules specify a 100 x 100 meter field and move interval 1000 ms and timeout 10000 ms bur for
         faster regression test this is reduced */
 
-        for(int i = 0; i < 100; i++) {
-            GameTest game = new GameTest();
+        // TODO check old games and compare to make sure player objects are not identical to make sure game is random
+        IntStream.range(0, 100).mapToObj(i -> new GameTest()).forEach(game -> {
             try {
                 game.play(50, 50, 10, 2, 100, 1000);
                 // TODO check old games and compare to make sure player objects are not identical to make sure game is random
             } catch (Exception ex) {
                 System.out.println("Error in game" + ex.getMessage());
             }
-        }
+        });
     }
 
     public static void main(String[] args) {
