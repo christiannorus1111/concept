@@ -97,7 +97,7 @@ public class Referee implements Runnable {
                 !player.isEjected()).filter(i -> isTooClose(player, players[i])).mapToObj(i -> player).forEach(this::handlePlayer);
     }
 
-    /* Caclulate if a player is to close to another player by substracting player a position for player b poaition, adding them the
+    /* Caclulate if a player is to close to another player by substracting player a position for player b poaition, adding
        them after taking them to the power of 2 and taking the aquare root to the result and then check if this number is less then the
        exclusive zone if this is the case the player must get a card.
     */
