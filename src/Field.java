@@ -2,6 +2,11 @@
 public class Field implements Runnable {
     private final int width;
     private final int height;
+
+    public Player[] getPlayers() {
+        return players;
+    }
+
     private final Player[] players;
     private final Referee referee;
 
